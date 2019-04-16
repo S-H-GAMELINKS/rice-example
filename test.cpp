@@ -1,16 +1,18 @@
 #include "rice/Class.hpp"
-#include "rice/String.hpp"
 
-using namespace Rice;
+Rice::Object test_initialize(Rice::Object self) {
+    self.iv_set("@foo", 42);
+}
 
-Object test_hello(Object /* self */) {
-    String str("hello world");
+Rice::Object test_hello(Rice::Object /* self */) {
+    Rice::String str("Hello World");
     return str;
 }
 
 extern "C" {
     void Init_test() {
-        Class rb_cTest = define_class("Test")
+        Rice::Class rb_cTest = Rice::define_class("Test")
+            .define_method("initialize", &test_initialize)
             .define_method("hello", &test_hello);
     }
 }

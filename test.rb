@@ -1,3 +1,5 @@
-require './test'
+require 'test'
 
-puts Test.new.hello
+puts hoge = Test.new
+puts hoge.hello
+puts hoge.instance_variable_get(:@foo)
