@@ -10,7 +10,7 @@ Object test_hello(Object /* self */) {
 
 extern "C" {
     void Init_test() {
-        Class rb_cTest = define_class("test")
+        Class rb_cTest = define_class("Test")
             .define_method("hello", &test_hello);
     }
 }
