@@ -1,4 +1,4 @@
 .vscode/ipch
 Makefile
 test.so
-main.o
+test.o
